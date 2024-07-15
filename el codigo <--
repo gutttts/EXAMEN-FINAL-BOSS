@@ -1,0 +1,69 @@
+import random
+
+trabajadores = ["Juan Perez", "Maria Garcia", "Carlos Lopez", "Ana Martinez", "Pedro Rodriguez","Laura Hernandez","Miguel Sanchez", "Isabel Gomez","Francisco Diaz","Elena Fernandez"]
+sueldos = [0] *len(trabajadores)
+#------------------------- F U N C I O N " 1 " -------------------------
+
+def asignar_sueldo():
+  for i in range(len(sueldos)):    #10 trabajadores, 10 sueldos
+    sueldos[i] = random.randint(300000,2500000)    #ASIGNA VALOR RANDOM A CADA SUELDO
+    print("Se asignaron los sueldos aleatoriamente...")
+#toda criatura viviente en este mundo morira en soledad
+    
+#------------------------- F U N C I O N " 2 " -------------------------
+    #no funciona pero no crashea el programa :(((((((((((
+def clasificar_Sueldo():
+    altos = [sueldo for sueldo in sueldos if sueldo >1500000] 
+    medios = [sueldo for sueldo in sueldos if sueldo >800000 and sueldo <=1500000] #FUNCIONA=?
+    bajos = [sueldo for sueldo in sueldos if sueldo <800000]
+
+    print(f"sueldos altos: {len(altos)}empleados") #NUMERO DE SUELDOS SOBRE 1500000
+    print(f"sueldos medios: {len(medios)}empleados")#NUMERO SUELDOS SOBRE 800K BAJO 1.5M
+    print(f"sueldos bajos: {len(bajos)}empleados")#NUMERO SUELDOS BAJO 800K
+#la raiz de todo sufrimiento es el deseo
+#------------------------- F U N C I O N " 3 " -------------------------
+def ver_estadisticas():
+    if len(sueldos) == 0 or sueldos [0] == 0:
+      print("Debe asignar los sueldos antes de ver las estadisticas, por favor elija opcion 1")
+      return
+    sueldo_maximo = max(sueldos)
+    sueldo_minimo = min(sueldos)
+    promedio_sueldo = sum(sueldos) / len(sueldos)
+    print (f"seuldo maximo: {sueldo_maximo}")
+    print(f"sueldo minimo: {sueldo_minimo}")
+    print(f"promedio sueldos: {promedio_sueldo}")
+#
+#------------------------- F U N C I O N " 4 " ------------------------- ARREGLAR
+def reporte_sueldos():
+   if len (sueldos) == 0 or sueldos [0] == 0:
+      print ("debe asginar sueldo pirmero")
+      return
+   print("report sueldo")
+   for trabajador, sueldo in zip(trabajadores, sueldos): #iteracion en las dos listas (trabajdores y sueldos)
+#funciona en la ite
+      print(f"  {trabajador} : {sueldo} ")
+
+
+
+def menu ():
+   while True:
+       print("------ MENU ------")
+       op = int(input("Elija una opcion\n1. ASIGNAR SUELDOS ALEATORIOS\n2. CLASIFICAR SUELDOS\n3. VER ESTADISTICAS\n4. REPORTE DE SUELDOS\n5. SALIR DEL PROGRAMA\n"))
+       if op == 1:
+         asignar_sueldo()
+       elif op == 2:
+          clasificar_Sueldo
+       elif op == 3:
+          ver_estadisticas()
+       elif op ==4:
+          reporte_sueldos()
+       elif op == 5:
+            print("FINALIZANDO PROGRAMA ... ... ... ... ")
+            print("Desarrollado por Victor Gutierrez")
+            print("RUT: 20.275.872 - K")
+            break
+       else:
+          print("ELIJA UNA OPCION VALIDA PORFOVR se lo pido :((((( ")
+
+menu()
+      
